@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package player;
+
+option go_package = "/player";
+
+message C2Slogin{
+  uint64 Uid = 1;
+}
+
+message S2Clogin{
+  bool Ok = 1;
+}
+

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package messageId;
+
+option go_package="/messageId";
+
+enum MessageId{
+  None = 0;
+  C2Slogin = 50001;
+  S2Clogin = 50002;
+
+  //player
+  C2SAddFriend = 100001;
+  S2CAddFriend = 100002;
+  C2SDelFriend = 100003;
+  S2CDelFriend = 100004;
+  C2SSendFriend = 100005;
+  S2CSendFriend = 100006;
+}
