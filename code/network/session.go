@@ -8,9 +8,13 @@ import (
 )
 
 type Session struct {
-	conn    net.Conn
-	packer  *NormalPacker
-	chWrite chan *Message
+	Uid            int64
+	conn           net.Conn
+	IsClose        bool
+	packer         *NormalPacker //IPacker
+	chWrite        chan *Message
+	IsPlayerOnline bool
+	MessageHandler func(packet *SessionPacket)
 }
 
 func NewSession(conn net.Conn) *Session {

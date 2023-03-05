@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package player;
+
+option go_package = "/player";
+
+message C2Slogin{
+  uint64 Uid = 1;
+}
+
+message S2Clogin{
+  bool Ok = 1;
+}
+
+message C2SAddFriend{
+  uint64 uid = 1;
+}
+
+message S2CAddFriend{
+  string Desc = 1;
+}
+
+message C2SDelFriend{
+  uint64 uid = 1;
+}
+
+message S2CDelFriend{
+  string Desc = 1;
+}
+
+message C2SSendChatMsg{
+  uint64 uid = 1;
+  ChatMessage msg = 2;
+  int32 Categary = 3; //聊天类型
+}
+
+message S2CSendChatMsg{
+
+}
+
+message ChatMessage{
+  string Content = 1;
+  repeated bytes extrra = 2;
+}
